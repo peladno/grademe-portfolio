@@ -1,9 +1,7 @@
 def is_alpha_palindrome(text: str) -> bool:
-    letters = "".join(c for c in text if c.isalpha())
+    checker = "".join(c.lower() for c in text if c.isalpha())
 
-    if not letters:
+    if not checker:
         return False
-
-    cleaned = letters.lower()
     
-    return (cleaned == cleaned[::-1])
+    return checker == checker[::-1]
